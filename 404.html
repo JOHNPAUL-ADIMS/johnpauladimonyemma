@@ -6,7 +6,9 @@
 <meta name="robots" content="noindex">
 <script>
   // Forward any old address to the same page on the new domain
+  var MOVED = { '/Work%20Experience': '/experience', '/Invited%20Talks': '/talks', '/Links%20to%20downloads': '/links', '/Leadership_Experience': '/leadership' };
   var p = location.pathname.replace(/^\/johnpauladimonyemma/, '').replace(/\.html$/, '').replace(/\/index$/, '/');
+  p = MOVED[p] || p;
   location.replace('https://johnpauladimonyemma.com' + (p || '/') + location.search + location.hash);
 </script>
 </head>
